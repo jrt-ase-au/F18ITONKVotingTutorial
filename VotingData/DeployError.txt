@@ -1,0 +1,32 @@
+﻿----- Build started: Project: VotingData, Configuration: Debug Any CPU ------
+2>------ Build started: Project: VotingWeb, Configuration: Debug Any CPU ------
+1>VotingData -> C:\Users\jrt\Source\Repos\F18ITONKVotingTutorial\VotingData\bin\Debug\netcoreapp2.0\win7-x64\VotingData.dll
+2>VotingWeb -> C:\Users\jrt\Source\Repos\F18ITONKVotingTutorial\VotingWeb\bin\Debug\netcoreapp2.0\win7-x64\VotingWeb.dll
+3>------ Build started: Project: Voting, Configuration: Debug x64 ------
+4>------ Publish started: Project: Voting, Configuration: Debug x64 ------
+4>Started executing script 'GetApplicationExistence'.
+-------- Package started: Project: Voting, Configuration: Debug x64 ------
+4>Finished executing script 'GetApplicationExistence'.
+4>Time elapsed: 00:00:07.4876669
+VotingData -> C:\Users\jrt\Source\Repos\F18ITONKVotingTutorial\VotingData\bin\Debug\netcoreapp2.0\win7-x64\VotingData.dll
+VotingData -> C:\Users\jrt\Source\Repos\F18ITONKVotingTutorial\VotingData\obj\Debug\netcoreapp2.0\win7-x64\PubTmp\Out\
+VotingWeb -> C:\Users\jrt\Source\Repos\F18ITONKVotingTutorial\VotingWeb\bin\Debug\netcoreapp2.0\win7-x64\VotingWeb.dll
+VotingWeb -> C:\Users\jrt\Source\Repos\F18ITONKVotingTutorial\VotingWeb\obj\Debug\netcoreapp2.0\win7-x64\PubTmp\Out\
+Voting -> C:\Users\jrt\Source\Repos\F18ITONKVotingTutorial\Voting\pkg\Debug
+-------- Package: Project: Voting succeeded, Time elapsed: 00:00:52.7528043 --------
+4>Started executing script 'Deploy-FabricApplication.ps1'.
+4>powershell -NonInteractive -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -Command ". 'C:\Users\jrt\Source\Repos\F18ITONKVotingTutorial\Voting\Scripts\Deploy-FabricApplication.ps1' -ApplicationPackagePath 'C:\Users\jrt\Source\Repos\F18ITONKVotingTutorial\Voting\pkg\Debug' -PublishProfileFile 'C:\Users\jrt\Source\Repos\F18ITONKVotingTutorial\Voting\PublishProfiles\Cloud.xml' -DeployOnly:$false -ApplicationParameter:@{} -UnregisterUnusedApplicationVersionsAfterUpgrade $false -OverrideUpgradeBehavior 'None' -OverwriteBehavior 'SameAppTypeAndVersion' -SkipPackageValidation:$false -ErrorAction Stop"
+4>Copying application to image store...
+4>Copy-ServiceFabricApplicationPackage : Operation timed out.
+4>At C:\Program Files\Microsoft SDKs\Service Fabric\Tools\PSModule\ServiceFabricSDK\Publish-NewServiceFabricApplication.p
+4>s1:244 char:9
+4>+         Copy-ServiceFabricApplicationPackage -ApplicationPackagePath  ...
+4>+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4>    + CategoryInfo          : OperationTimeout: (:) [Copy-ServiceFabricApplicationPackage], TimeoutException
+4>    + FullyQualifiedErrorId : CopyApplicationPackageErrorId,Microsoft.ServiceFabric.Powershell.CopyApplicationPackage
+4> 
+4>Finished executing script 'Deploy-FabricApplication.ps1'.
+4>Time elapsed: 00:11:33.0843482
+4>The PowerShell script failed to execute.
+========== Build: 3 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+========== Publish: 0 succeeded, 1 failed, 0 skipped ==========

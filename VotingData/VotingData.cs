@@ -29,16 +29,25 @@ namespace VotingData
         /// <returns>The collection of listeners.</returns>
         protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
         {
+            /*
+             * https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicefabric.services.communication.runtime.servicereplicalistener?view=azure-dotnet
+             * https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicefabric.services.communication.aspnetcore.kestrelcommunicationlistener?view=azure-dotnet
+             * 
+             * */
             return new ServiceReplicaListener[]
             {
-                new ServiceReplicaListener(serviceContext =>
+                                          //Herunder oprettes en parameter "servicecontext"
+                                          //som på et tidspunkt kaldes med en værdi    
+                new ServiceReplicaListener(serviceContext =>         //Herunder oprettes en funktion med to
+                                                                     //parametre "url" og "listener" som PÅ ET TIDSPUNKT KALDES af Opstart /jrt
                     new KestrelCommunicationListener(serviceContext, (url, listener) =>
-                    {
+                    { //Her oprettes koden bag den pågældende "Fabric" function
                         ServiceEventSource.Current.ServiceMessage(serviceContext, $"Starting Kestrel on {url}");
 
                         return new WebHostBuilder()
                                     .UseKestrel()
                                     .ConfigureServices(
+                                        //Her oprettes en parameter "services" som gives værdíen af de to Singletons    
                                         services => services
                                             .AddSingleton<StatefulServiceContext>(serviceContext)
                                             .AddSingleton<IReliableStateManager>(this.StateManager))

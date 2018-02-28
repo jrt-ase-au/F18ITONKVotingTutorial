@@ -13,8 +13,12 @@ namespace VotingData
         /// </summary>
         private static void Main()
         {
+            /*
+             * https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-reliable-services-communication-aspnetcore 
+             */
             try
             {
+                
                 // The ServiceManifest.XML file defines one or more service type names.
                 // Registering a service maps a service type name to a .NET type.
                 // When Service Fabric creates an instance of this service type,
